@@ -1,5 +1,6 @@
 console.log("Hello from a separate JS file!");
 
+// #region Conditional Loops
 let randomString = "HelloWorld123";
 
 console.log(randomString.length)
@@ -107,3 +108,47 @@ console.log("------------")
 colors.forEach(abc => {
     console.log(abc);
 });
+
+// #endregion
+
+// #region Functions
+console.log("--------------")
+function simpleFunction(){
+    console.log("Simple Function created!");
+}
+
+simpleFunction();
+console.log("--------------")
+function greet(name) {
+    console.log("Hello, " + name);
+}
+
+greet("Alice");
+console.log("--------------")
+const multiply = function (a, b) {
+    return a * b;
+}
+console.log(multiply(1,2));
+console.log("--------------")
+
+// Arrow Functions
+// parameter => stmts;
+const square = length => length * length;
+console.log(square(4));
+console.log("--------------")
+
+const area = (width, height) => {
+    let result = width * height;
+    return result;
+}
+
+console.log(area(3,4));
+console.log("--------------")
+
+function randomFunction(anotherFunction) {
+    anotherFunction();
+}
+
+randomFunction( () => console.log("I was called!") );
+
+// #endregion
