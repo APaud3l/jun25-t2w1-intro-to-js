@@ -152,3 +152,72 @@ function randomFunction(anotherFunction) {
 randomFunction( () => console.log("I was called!") );
 
 // #endregion
+
+//  #region Classes
+class Dog {
+    constructor(name, breed) {
+        this.name = name;
+        this.breed = breed;
+    }
+
+    bark() {
+        console.log(`${this.name} says woof!`);
+    }
+}
+
+const jackie = new Dog("Jackie", "Poodle");
+jackie.bark()
+
+// Old practice to define private variables
+class Counter {
+    constructor() {
+        this._count = 0;
+    }
+
+    get count(){
+        return this._count;
+    }
+
+    set count(val){
+        if (val >=0) {
+            this._count = val;
+        }
+    }
+
+    static sayHello() {
+        console.log("Hello from Counter!");
+    }
+}
+
+let c = new Counter();
+c.count = 5;
+console.log(c.count);
+Counter.sayHello();
+
+
+// Recently introduced practice to define private variables
+class Counter1 {
+    #count = 0;
+
+    get count(){
+        return this.#count;
+    }
+
+    set count(val){
+        if (val >=0) {
+            this.#count = val;
+        }
+    }
+
+    static sayHello() {
+        console.log("Hello from Counter!");
+    }
+}
+
+let counter1 = new Counter1();
+counter1.count = 5;
+console.log(counter1.count);
+// console.log(counter1.#count); This will give error because #count is a private variable
+Counter1.sayHello();
+
+// #endregion
