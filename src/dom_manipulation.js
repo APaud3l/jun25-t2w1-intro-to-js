@@ -53,3 +53,66 @@ function accessElementsByQuerySelectorAll(){
 
 accessElementsByQuerySelectorAll();
 
+function changeUsingTextContent(){
+    // Get that element
+    let msg = document.getElementById("message");
+
+    // Get the text
+    console.log(msg.textContent);
+    // Change the text
+    msg.textContent = "Value changed from JS!!!";
+    console.log(msg.textContent);
+}
+
+changeUsingTextContent();
+
+function changeUsingInnerHTML(){
+    // Get that element
+    let out = document.getElementById("output");
+
+    // Change it
+    out.innerHTML = "<i>Score:</i>";
+}
+
+// Commented because it clashes with the function below: changeInputValue
+// changeUsingInnerHTML();
+
+
+function changeInputValue(){
+    // Get the element
+    let score = document.getElementById('score');
+
+    console.log(score.value);
+
+    // Change the value
+    score.value = "90";
+
+    document.getElementById('result').textContent = "Your score: " + score.value;
+    // Avoid any possibility of XSS (Cross-Site Scripting) 
+    // document.getElementById('result').innerHTML = "<script>alert('hello');</script>";
+}
+
+changeInputValue();
+
+function usingClassList(){
+    // Get that element
+    let headline = document.getElementById("headline");
+
+    // Add class to the element
+    headline.classList.add('featured');
+
+    // To remove a class
+    let desc = document.getElementById('desc');
+    desc.classList.remove('faded');
+
+    // To check if a class exists
+    console.log(headline.classList.contains('bigTitle'));
+
+    // Toggle
+    headline.classList.toggle('bigTitle');
+
+    // To check if a class exists
+    console.log(headline.classList.contains('bigTitle'));
+}
+
+usingClassList();
