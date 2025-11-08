@@ -116,3 +116,41 @@ function usingClassList(){
 }
 
 usingClassList();
+
+function createAnElement(){
+    // Create the element
+    let newPara = document.createElement('p');
+
+    //  Set the properties for the element
+    newPara.textContent = "This was added from JavaScript!!";
+    newPara.className = "special";
+    newPara.id = "newParagraph";
+    newPara.style.color = "green";
+
+    // Attach (Append) it to the DOM (by default, to the end of the body tag)
+    // document.body.appendChild(newPara);
+
+    // Append it to the div tag
+    mainTitle = document.getElementById("mainTitle");
+    mainTitle.appendChild(newPara);
+
+    // To append multiple childs, use .append()
+
+    // Prepend it on the parent
+    let note = document.createElement('p');
+    note.textContent = "First in Line!!";
+    mainTitle.prepend(note);
+}
+
+createAnElement();
+
+
+function removeAnElement(){
+    // Get that element
+    announcement = document.getElementById("announcement");
+
+    // Remove it
+    announcement.remove();
+}
+
+removeAnElement();
